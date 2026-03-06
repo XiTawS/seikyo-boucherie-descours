@@ -9,7 +9,7 @@ import EditableButton from "@/components/cms/EditableButton";
 import LightboxProvider, { useLightbox } from "@/components/Lightbox";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { MapPin, Phone, Mail, Clock, Pen, CreditCard, Truck, UtensilsCrossed, PartyPopper } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Pen, CreditCard, Truck, UtensilsCrossed, PartyPopper, Package, ExternalLink } from "lucide-react";
 
 /* ─── Fade ─── */
 function Fade({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -30,7 +30,7 @@ function Hero() {
   return (
     <section className="relative h-[85vh] overflow-hidden">
       <EditableImage contentKey="home.hero.bg"
-        defaultSrc="https://images.unsplash.com/photo-1558030006-450675393462?w=1920&q=80"
+        defaultSrc="https://res.cloudinary.com/dxcudyuno/image/upload/v1772834539/boucherie-descours/hero.jpg"
         alt="Boucherie J. Descours" fill sizes="100vw" priority
         className="object-cover" hideButton inputRef={ref} />
       {isAdmin && (
@@ -51,9 +51,15 @@ function Hero() {
               className="font-display italic text-6xl md:text-8xl text-white leading-[0.9] mb-3" />
             <EditableText contentKey="home.hero.subtitle" defaultValue="Fabrication maison depuis Saint-Donat" tag="p"
               className="text-white/60 text-lg mb-6" />
-            <EditableButton contentKeyText="home.hero.cta.text" contentKeyUrl="home.hero.cta.url"
-              defaultText="Nous trouver" defaultUrl="#contact"
-              className="bg-[var(--color-red)] hover:bg-[var(--color-red-dark)] text-white px-8 py-3 text-xs tracking-[0.2em] uppercase transition-all duration-500" />
+            <div className="flex flex-wrap items-center gap-4">
+              <EditableButton contentKeyText="home.hero.cta.text" contentKeyUrl="home.hero.cta.url"
+                defaultText="Nous trouver" defaultUrl="#contact"
+                className="bg-[var(--color-red)] hover:bg-[var(--color-red-dark)] text-white px-8 py-3 text-xs tracking-[0.2em] uppercase transition-all duration-500" />
+              <a href="#relais-pickup" className="flex items-center gap-2.5 bg-white hover:bg-white/90 text-[#003DA5] px-5 py-3 text-xs tracking-[0.15em] uppercase transition-all duration-300 shadow-lg">
+                <img src="https://res.cloudinary.com/dxcudyuno/image/upload/v1772834738/logos/pickup-icon.png" alt="Pickup" className="w-6 h-6" />
+                <span className="font-bold">Relais Pickup</span>
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -111,7 +117,7 @@ function ImageBreak() {
     <section ref={ref} className="relative h-[35vh] overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-0 scale-[1.2]">
         <EditableImage contentKey="home.break.image"
-          defaultSrc="https://images.unsplash.com/photo-1551028150-64b9f398f678?w=1920&q=80"
+          defaultSrc="https://res.cloudinary.com/dxcudyuno/image/upload/v1772834583/boucherie-descours/interieur.jpg"
           alt="Charcuterie maison" fill sizes="100vw" className="object-cover" hideButton inputRef={inputRef} />
       </motion.div>
       <div className="absolute inset-0 bg-[var(--color-bg-dark)]/40" />
@@ -136,14 +142,14 @@ function Gallery() {
   const { openLightbox } = useLightbox();
 
   const images = [
-    { key: "p1", src: "https://images.unsplash.com/photo-1558030006-450675393462?w=1200&q=80", bento: "col-span-2 row-span-2" },
-    { key: "p2", src: "https://images.unsplash.com/photo-1551028150-64b9f398f678?w=800&q=80", bento: "col-span-1 row-span-1" },
-    { key: "p3", src: "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80", bento: "col-span-1 row-span-1" },
-    { key: "p4", src: "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=800&q=80", bento: "col-span-2 row-span-1" },
-    { key: "p5", src: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=800&q=80", bento: "col-span-1 row-span-1" },
-    { key: "p6", src: "https://images.unsplash.com/photo-1560781290-7dc94c0f8f4f?w=800&q=80", bento: "col-span-1 row-span-1" },
-    { key: "p7", src: "https://images.unsplash.com/photo-1551028150-64b9f398f678?w=600&q=80", bento: "col-span-1 row-span-1" },
-    { key: "p8", src: "https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80", bento: "col-span-1 row-span-1" },
+    { key: "p1", src: "https://res.cloudinary.com/dxcudyuno/image/upload/v1772834581/boucherie-descours/charcuterie.jpg", bento: "col-span-2 row-span-2" },
+    { key: "p2", src: "https://res.cloudinary.com/dxcudyuno/image/upload/v1772834582/boucherie-descours/saucisses.jpg", bento: "col-span-1 row-span-1" },
+    { key: "p3", src: "https://res.cloudinary.com/dxcudyuno/image/upload/v1772834585/boucherie-descours/saucissons.jpg", bento: "col-span-1 row-span-1" },
+    { key: "p4", src: "https://res.cloudinary.com/dxcudyuno/image/upload/v1772834587/boucherie-descours/fromages.jpg", bento: "col-span-2 row-span-1" },
+    { key: "p5", src: "https://res.cloudinary.com/dxcudyuno/image/upload/v1772834592/boucherie-descours/traiteur.jpg", bento: "col-span-1 row-span-1" },
+    { key: "p6", src: "https://res.cloudinary.com/dxcudyuno/image/upload/v1772834583/boucherie-descours/interieur.jpg", bento: "col-span-1 row-span-1" },
+    { key: "p7", src: "https://res.cloudinary.com/dxcudyuno/image/upload/v1772834582/boucherie-descours/saucisses.jpg", bento: "col-span-1 row-span-1" },
+    { key: "p8", src: "https://res.cloudinary.com/dxcudyuno/image/upload/v1772834581/boucherie-descours/charcuterie.jpg", bento: "col-span-1 row-span-1" },
   ];
   const srcs = images.map(i => i.src);
 
@@ -231,6 +237,80 @@ function Horaires() {
   );
 }
 
+/* ─── RELAIS PICKUP ─── */
+function RelaisPickup() {
+  return (
+    <section id="relais-pickup" className="py-16 md:py-20 bg-[var(--color-bg-warm)]">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <Fade className="text-center mb-10">
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <img src="https://res.cloudinary.com/dxcudyuno/image/upload/v1772834738/logos/pickup-icon.png" alt="Pickup" className="w-8 h-8" />
+            <span className="text-[#003DA5] font-display text-xl">Pickup</span>
+          </div>
+          <EditableText contentKey="home.pickup.title" defaultValue="Point Relais Pickup" tag="h2"
+            className="font-display text-3xl md:text-4xl text-[var(--color-text)]" />
+        </Fade>
+
+        <div className="grid md:grid-cols-12 gap-8 items-start">
+          <Fade className="md:col-span-7">
+            <div className="bg-white border border-[var(--color-gold)]/20 p-8">
+              <EditableText contentKey="home.pickup.text"
+                defaultValue="La Boucherie J. Descours est point Relais Pickup officiel. Récupérez et déposez vos colis directement chez nous, pendant les horaires d'ouverture."
+                tag="p" className="text-[var(--color-text-muted)] text-sm leading-relaxed mb-6" />
+
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="flex items-center gap-3 bg-[var(--color-bg-warm)] p-4">
+                  <Package className="w-5 h-5 text-[var(--color-red)] flex-shrink-0" />
+                  <div>
+                    <p className="text-[var(--color-text)] text-sm font-medium">Retrait colis</p>
+                    <p className="text-[var(--color-text-muted)] text-xs">Récupérez vos commandes</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 bg-[var(--color-bg-warm)] p-4">
+                  <Truck className="w-5 h-5 text-[var(--color-red)] flex-shrink-0" />
+                  <div>
+                    <p className="text-[var(--color-text)] text-sm font-medium">Dépôt colis</p>
+                    <p className="text-[var(--color-text-muted)] text-xs">Renvoyez vos achats</p>
+                  </div>
+                </div>
+              </div>
+
+              <a href="https://localiser.laposte.fr/drome/st-donat-sur-l-herbasse/boucherie-j-descours-365419" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[var(--color-red)] hover:text-[var(--color-red-dark)] text-xs tracking-[0.2em] uppercase font-medium transition-colors">
+                Voir sur La Poste <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </Fade>
+
+          <Fade delay={0.1} className="md:col-span-5">
+            <div className="bg-[var(--color-bg-dark)] p-8">
+              <p className="text-[var(--color-gold)] text-xs tracking-[0.3em] uppercase mb-4">Horaires retrait</p>
+              <div className="space-y-3 text-sm">
+                {[
+                  { jour: "Lundi", h: "6h30–12h30 / 15h–19h" },
+                  { jour: "Mardi", h: "6h30–12h30 / 15h–19h" },
+                  { jour: "Mercredi", h: "6h–12h30" },
+                  { jour: "Jeudi", h: "6h30–12h30 / 15h–19h" },
+                  { jour: "Vendredi", h: "6h30–12h30 / 15h–19h" },
+                ].map((d) => (
+                  <div key={d.jour} className="flex justify-between border-b border-white/5 pb-2">
+                    <span className="text-white/50">{d.jour}</span>
+                    <span className="text-white/80">{d.h}</span>
+                  </div>
+                ))}
+                <div className="flex justify-between pt-1">
+                  <span className="text-white/30">Sam / Dim</span>
+                  <span className="text-white/30">Fermé</span>
+                </div>
+              </div>
+            </div>
+          </Fade>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── CONTACT ─── */
 function Contact() {
   return (
@@ -295,6 +375,7 @@ export default function Home() {
         <ImageBreak />
         <Gallery />
         <Horaires />
+        <RelaisPickup />
         <Contact />
         <Footer />
       </main>

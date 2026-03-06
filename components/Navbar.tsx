@@ -25,7 +25,7 @@ export default function Navbar() {
       <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
         scrolled
           ? "bg-[var(--color-bg-dark)]/95 backdrop-blur-md py-3"
-          : "bg-transparent py-5"
+          : "bg-[var(--color-bg-dark)]/60 backdrop-blur-sm py-5"
       }`}>
         <div className="max-w-6xl mx-auto px-6 md:px-12 flex items-center justify-between">
           <a href="#" className="font-display italic text-xl text-white">
