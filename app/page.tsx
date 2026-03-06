@@ -83,10 +83,10 @@ function SavoirFaire() {
             tag="p" className="text-[var(--color-text-muted)] max-w-2xl mx-auto leading-relaxed" />
         </Fade>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 items-stretch">
           {services.map((s, i) => (
-            <Fade key={s.title} delay={i * 0.08}>
-              <div className="text-center py-8 px-4 border border-[var(--color-red)]/10 hover:border-[var(--color-red)]/30 transition-colors group">
+            <Fade key={s.title} delay={i * 0.08} className="h-full">
+              <div className="h-full text-center py-8 px-4 border border-[var(--color-red)]/10 hover:border-[var(--color-red)]/30 transition-colors group">
                 <s.icon className="w-6 h-6 text-[var(--color-red)] mx-auto mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-[var(--color-text)] font-medium text-sm mb-1">{s.title}</h3>
                 <p className="text-[var(--color-text-muted)] text-xs leading-relaxed">{s.desc}</p>
