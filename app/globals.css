@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* ─── DA Boucherie Descours — rouge bordeaux artisan ─── */
+  --color-bg: #FAF6F1;
+  --color-bg-warm: #F0EAE0;
+  --color-bg-dark: #1A1210;
+  --color-bg-deep: #0F0A08;
+
+  /* Accents — rouge enseigne */
+  --color-red: #8B2030;
+  --color-red-light: #A83040;
+  --color-red-dark: #6B1520;
+  --color-gold: #C4943D;
+
+  /* Text */
+  --color-text: #1A1210;
+  --color-text-light: #F0EAE0;
+  --color-text-muted: #7A6E65;
+  --color-text-dim: #5A4E45;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--color-bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--color-red); border-radius: 2px; }
+
+::selection {
+  background: var(--color-red);
+  color: white;
+}
