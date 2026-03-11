@@ -1,0 +1,12 @@
+{
+  "name": "Boucherie Charcuterie Traiteur J. Descours",
+  "short_name": "Boucherie Descours",
+  "description": "Boucherie, charcuterie et traiteur artisanal à Saint-Donat-sur-l'Herbasse. Fabrication maison, service traiteur, buffets et réceptions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#8B2030",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "any", "type": "image/x-icon" }
+  ]
+}

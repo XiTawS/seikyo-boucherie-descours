@@ -10,10 +10,17 @@ export const metadata: Metadata = {
     "Boucherie, charcuterie et traiteur artisanal à Saint-Donat-sur-l'Herbasse. Fabrication maison, service traiteur, buffets et réceptions. Ouvert du lundi au dimanche.",
   keywords:
     "boucherie, charcuterie, traiteur, Saint-Donat-sur-l'Herbasse, Descours, fabrication maison, Drôme, buffet, réception mariage",
+  manifest: "/manifest.json",
   openGraph: {
     title: "Boucherie J. Descours — Artisan boucher à Saint-Donat",
-    description: "Boucherie, charcuterie, traiteur. Fabrication maison. Saint-Donat-sur-l'Herbasse.",
+    description:
+      "Boucherie, charcuterie, traiteur. Fabrication maison. Saint-Donat-sur-l'Herbasse.",
+    url: "https://boucherie-descours.seikyo.fr",
     type: "website",
+    locale: "fr_FR",
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 
